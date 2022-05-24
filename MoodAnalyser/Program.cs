@@ -12,7 +12,7 @@ namespace MoodAnalyzer
 
             while (true)
             {
-                Console.WriteLine("Please choose the option :\n1.Happy or SAD Mood\n2.Using the Default and Parametterized Constructor\n3.Exception");
+                Console.WriteLine("Please choose the option :\n1.Happy or SAD Mood\n2.Using the Default and Parametterized Constructor\n3.Exception\n4.Custom Exception");
                 int option = Convert.ToInt16(Console.ReadLine());
                 switch (option)
                 {
@@ -34,6 +34,11 @@ namespace MoodAnalyzer
                         AnalyzemoodException A4 = new AnalyzemoodException();
                         string result4 = A4.AnalyzeMoodExceptionMethod(null);
                         Console.WriteLine(result4);
+                        break;
+                    case 4:
+                        MoodAnalysisException A5 = new MoodAnalysisException();
+                        string result5 = A5.MoodAnalysisExceptionMethod("I am in sad Mood");
+                        Console.WriteLine(result5);
                         break;
                 }
             }
