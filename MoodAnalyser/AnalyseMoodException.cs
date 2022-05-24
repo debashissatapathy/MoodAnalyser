@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
-    public class AnalyzeMoodException
+    public class AnalyzemoodException
     {
-        public string AnalyzeMoodExceptionMethod( string message )
+        public string AnalyzeMoodExceptionMethod(string message)
         {
-            try 
+            try
             {
                 string message1 = "SAD";
                 string message2 = "HAPPY";
@@ -24,17 +24,17 @@ namespace MoodAnalyzer
                 }
                 else
                 {
-                    Console.WriteLine("Wrong Input");
+                    Console.WriteLine("wrong input");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Console.WriteLine("You have provide Null reference: {0}", e.Message);
+                Console.WriteLine("you have provide null reference: {0}", e.Message);
                 return message;
             }
             return default(string);
         }
 
-       
+
     }
 }
