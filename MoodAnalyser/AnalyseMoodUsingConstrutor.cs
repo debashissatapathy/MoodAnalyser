@@ -6,35 +6,32 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
-    public class AnalyzeMoodException
+    public class AnalyzeMoodUsingConstructor
     {
-        public string AnalyzeMoodExceptionMethod( string message )
+        public AnalyzeMoodUsingConstructor()
         {
-            try 
-            {
-                string message1 = "SAD";
-                string message2 = "HAPPY";
-                if (message.ToUpper().Contains(message1.ToUpper()))
-                {
-                    return message1;
-                }
-                else if (message.ToUpper().Contains(message2.ToUpper()))
-                {
-                    return message2;
-                }
-                else
-                {
-                    Console.WriteLine("Wrong Input");
-                }
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine("You have provide Null reference: {0}", e.Message);
-                return message;
-            }
-            return default(string);
+
         }
 
-       
+        public string msg1 = "I am in SAD Mood";
+        public AnalyzeMoodUsingConstructor(string message)
+        {
+            this.msg1 = message;
+        }
+
+
+        public string AnalyseMoodMethod()
+        {
+            string message1 = "SAD";
+            if (msg1.ToUpper().Contains(message1.ToUpper()))
+            {
+                return message1;
+            }
+            else
+            {
+                return "HAPPY";
+            }
+
+        }
     }
 }
