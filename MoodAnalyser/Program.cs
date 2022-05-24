@@ -12,7 +12,8 @@ namespace MoodAnalyzer
 
             while (true)
             {
-                Console.WriteLine("Please choose the option :\n1.Happy or SAD Mood\n2.Using the Default and Parametterized Constructor\n3.Exception\n4.Custom Exception");
+                Console.WriteLine("Please choose the option :\n1.Happy or SAD Mood\n2.Using the Default and Parametterized Constructor\n3.Exception\n4.Custom Exception\n"+
+                                    "5.reflectors with Default Constructor\n6)reflectors with Parametarised Constructor\n7)Reflections Invoke Method\n8)Reflections to change mood Dynamically"); 
                 int option = Convert.ToInt16(Console.ReadLine());
                 switch (option)
                 {
@@ -37,8 +38,27 @@ namespace MoodAnalyzer
                         break;
                     case 4:
                         MoodAnalysisException A5 = new MoodAnalysisException();
-                        string result5 = A5.MoodAnalysisExceptionMethod("I am in sad Mood");
+                        string result5 = A5.MoodAnalysisExceptionMethod(string.Empty);
                         Console.WriteLine(result5);
+                        break;
+                    case 5:
+                       object result6 = MoodAnalysisFactory.CreateMoodAnalyzer("MoodAnalyzer.MoodAnalysisException", "MoodAnalysisException");
+                        Console.WriteLine(result6);
+                        break;
+                    case 6:
+                        
+                        object result7 = MoodAnalyzerParameterizedConstructor.UsingParameterizedConstructor("MoodAnalyzer.AnalyseMood1", "AnalyseMood1", "HAPPY");
+                        Console.WriteLine(result7);
+                        break;
+                    case 7:
+                        string result8 = MoodAnalysisFactory.InvokeAnalyseMood("Happy", "AnalyseMoodMethod");
+                        Console.WriteLine(result8);
+                        break;
+                    case 8:
+                        string result9 = MoodAnalysisFactory.SetField(null, "456_message2");
+                        Console.WriteLine(result9);
+                        break;
+                    default:
                         break;
                 }
             }
